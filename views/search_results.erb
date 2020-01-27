@@ -1,0 +1,22 @@
+<h1>@keyword</h1>
+
+<p>
+  Okay..Here are your search result
+</p>
+
+
+
+<ul>
+  <% @top_recipes.each_with_index do |recipe, index| %>
+    <li>
+      <%= index + 1 %>. <%= recipe.name %> (<%= recipe.prep_time %>)
+    </li>
+  <% end %>
+</ul>
+
+<form method="POST" action="/imported">
+  <p>Which recipe do you want to import? (index)<br>
+    <input type="number" name="import_i"></p>
+    <input type="hidden" name="import_key" value=<%= @keyword %>></p>
+  <input type="submit" value = "Submit">
+</form>

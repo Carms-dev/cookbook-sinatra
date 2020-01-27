@@ -1,0 +1,19 @@
+<h1>Destroy a recipe</h1>
+
+<p>Here are all your recipes</p>
+
+
+<ul>
+  <% @recipes.each_with_index do |recipe, index| %>
+    <% checkbox = recipe.done ? "[x]" : "[ ]" %>
+    <li>
+      <%= index + 1 %>. <%= checkbox %> <%= recipe.name %> (<%= recipe.prep_time %>)
+    </li>
+  <% end %>
+</ul>
+
+<form method="POST" action="/updated">
+  <p>Which recipe do you want to update? (index)<br>
+    <input type="number" name="update_i"></p>
+  <input type="submit" value = "Submit">
+</form>

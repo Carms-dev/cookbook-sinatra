@@ -1,0 +1,27 @@
+<%= Time.now %>
+
+<h1>
+  Welcome to your cookbook
+</h1>
+
+<p>
+  Here are your exisiting recipes
+</p>
+
+
+
+<ul>
+  <% @recipes.each_with_index do |recipe, index| %>
+    <% checkbox = recipe.done ? "[x]" : "[ ]" %>
+    <li>
+      <%= checkbox %> <%= recipe.name %> - <%= recipe.description %> (<%= recipe.prep_time %>)
+    </li>
+  <% end %>
+</ul>
+
+<a href = "/">Home</a>
+<a href = "/create">Create Recipe</a>
+<a href = "/destroy">Destroy Recipe</a>
+<a href = "/import">Import</a>
+<a href = "/update_status">Update Status</a>
+

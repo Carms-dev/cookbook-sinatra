@@ -1,0 +1,16 @@
+<h1>Destroy a recipe</h1>
+
+
+<ul>
+  <% @recipes.each_with_index do |recipe, index| %>
+    <li>
+      <%= index + 1 %>. <%= recipe.name %> (<%= recipe.prep_time %>)
+    </li>
+  <% end %>
+</ul>
+
+<form method="POST" action="/delete">
+  <p>Which recipe do you want to delete? (index)<br>
+    <input type="number" name="delete_i"></p>
+  <input type="submit" value = "Submit">
+</form>
